@@ -3,17 +3,17 @@ import "./Sort.css";
 import { useState } from "react";
 const Sort = () => {
    const [sortMenus, setSortMenus] = useState({
-      Type: "none",
-      Domain: "none",
-      SkinType: "none",
-      Gender: "none",
-      AgeGroup: "none",
+      isTypeActive: false,
+      isDomainActive: false,
+      isSkinTypeActive:false,
+      isGenderActive: false,
+      isAgeGroupActive: false,
    });
    const handleClick = (item) => {
-      if (sortMenus[item] === "none") {
-         setSortMenus({ ...sortMenus, [item]: "block" });
+      if (sortMenus[item] === false) {
+         setSortMenus({ ...sortMenus, [item]: true });
       } else {
-         setSortMenus({ ...sortMenus, [item]: "none" });
+         setSortMenus({ ...sortMenus, [item]: false });
       }
    };
 
@@ -29,9 +29,9 @@ const Sort = () => {
          {/* Type */}
          <div className="type dropdown-div">
             {/* Visible div */}
-            <div className="visible" onClick={() => handleClick("Type")}>
+            <div className="visible" onClick={() => handleClick("isTypeActive")}>
                <span>Type</span>
-               <div className="arrow-div">
+               <div className="arrow-div" style={{transform: sortMenus.isTypeActive? 'rotate(180deg)':'rotate(0deg)'}}>
                   <svg
                      xmlns="http://www.w3.org/2000/svg"
                      fill="none"
@@ -52,7 +52,7 @@ const Sort = () => {
             {/* Hidden div */}
             <div
                className="checkbox-div type-checkboxes"
-               style={{ display: `${sortMenus.Type}` }}
+               style={{ width:sortMenus.isTypeActive? '220px': '0px', height: sortMenus.isTypeActive? '510px': '0px' }}
             >
                <div className="check-group">
                   <label htmlFor="faceWash" className="sort-label">
@@ -114,9 +114,9 @@ const Sort = () => {
          {/* Domain */}
          <div className="domain dropdown-div">
             {/* Visible div */}
-            <div className="visible" onClick={() => handleClick("Domain")}>
+            <div className="visible" onClick={() => handleClick("isDomainActive")}>
                <span>Domain</span>
-               <div className="arrow-div">
+               <div className="arrow-div" style={{transform: sortMenus.isDomainActive? 'rotate(180deg)':'rotate(0deg)'}}>
                   <svg
                      xmlns="http://www.w3.org/2000/svg"
                      fill="none"
@@ -136,7 +136,7 @@ const Sort = () => {
             {/* Hidden div */}
             <div
                className="checkbox-div type-checkboxes"
-               style={{ display: `${sortMenus.Domain}` }}
+               style={{ width:sortMenus.isDomainActive? '220px': '0px', height: sortMenus.isDomainActive? '300px': '0px' }}
             >
                <div className="check-group">
                   <label htmlFor="faceWash" className="sort-label">
@@ -174,9 +174,9 @@ const Sort = () => {
          {/* Skin Type */}
          <div className="skin-type dropdown-div">
             {/* Visible div */}
-            <div className="visible" onClick={() => handleClick("SkinType")}>
+            <div className="visible" onClick={() => handleClick("isSkinTypeActive")}>
                <span>Skin Type</span>
-               <div className="arrow-div">
+               <div className="arrow-div" style={{transform: sortMenus.isSkinTypeActive? 'rotate(180deg)':'rotate(0deg)'}}>
                   <svg
                      xmlns="http://www.w3.org/2000/svg"
                      fill="none"
@@ -197,7 +197,7 @@ const Sort = () => {
             {/* Hidden div */}
             <div
                className="checkbox-div type-checkboxes"
-               style={{ display: `${sortMenus.SkinType}` }}
+               style={{ width:sortMenus.isSkinTypeActive? '220px': '0px', height: sortMenus.isSkinTypeActive? '260px': '0px' }}
             >
                <div className="check-group">
                   <label htmlFor="faceWash" className="sort-label">
@@ -229,9 +229,9 @@ const Sort = () => {
          {/* Gender */}
          <div className="gender dropdown-div">
             {/* Visible div */}
-            <div className="visible" onClick={() => handleClick("Gender")}>
+            <div className="visible" onClick={() => handleClick("isGenderActive")}>
                <span>Gender</span>
-               <div className="arrow-div">
+               <div className="arrow-div" style={{transform: sortMenus.isGenderActive? 'rotate(180deg)':'rotate(0deg)'}}>
                   <svg
                      xmlns="http://www.w3.org/2000/svg"
                      fill="none"
@@ -251,7 +251,7 @@ const Sort = () => {
             {/* Hidden div */}
             <div
                className="checkbox-div type-checkboxes"
-               style={{ display: `${sortMenus.Gender}` }}
+               style={{ width:sortMenus.isGenderActive? '180px': '0px', height: sortMenus.isGenderActive? '170px': '0px' }}
             >
                <div className="check-group">
                   <label htmlFor="faceWash" className="sort-label">
@@ -278,9 +278,9 @@ const Sort = () => {
          {/* Age Group */}
          <div className="age-group dropdown-div">
            {/* Visible div */}
-           <div className="visible" onClick={() => handleClick("AgeGroup")}>
+           <div className="visible" onClick={() => handleClick("isAgeGroupActive")}>
                <span>Age Group</span>
-               <div className="arrow-div">
+               <div className="arrow-div" style={{transform: sortMenus.isAgeGroupActive? 'rotate(180deg)':'rotate(0deg)'}}>
                   <svg
                      xmlns="http://www.w3.org/2000/svg"
                      fill="none"
@@ -300,7 +300,7 @@ const Sort = () => {
             {/* Hidden div */}
             <div
                className="checkbox-div type-checkboxes"
-               style={{ display: `${sortMenus.AgeGroup}` }}
+               style={{ width:sortMenus.isAgeGroupActive? '180px': '0px', height: sortMenus.isAgeGroupActive? '390px': '0px' }}
             >
                <div className="check-group">
                   <label htmlFor="faceWash" className="sort-label">
@@ -322,7 +322,7 @@ const Sort = () => {
                </div>
                <div className="check-group">
                   <label htmlFor="faceWash" className="sort-label">
-                     18-55
+                     18-55 
                   </label>
                   <input type="checkbox" className="sort-checkbox" />
                </div>

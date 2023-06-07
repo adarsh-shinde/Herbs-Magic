@@ -1,8 +1,13 @@
 .sort {
+    position: relative;
+    top: 0px;
+    left: 0px;
     width: 1300px;
     margin: 0 auto;
     display: flex;
-    
+    height: 100px;
+    overflow: visible;
+    z-index: 5;
     align-items: flex-start;
     flex-wrap: wrap;
 }
@@ -15,19 +20,19 @@
     flex-wrap: wrap;
 } */
 .dropdown-div{
-    border: 1px solid #00000024;
+    border: 1px solid #0000004f;
+    background: #fff;
     /* padding: 16px 20px; */
     border-radius: 25px;
     font-size: 20px;
     font-weight: 500;
-    margin: 0 20px;
+    margin: 0 15px;
     display: flex;
     flex-direction: column;
     /* align-items: center; */
     justify-content: center;
     cursor: pointer;
-    transition: background ease 0.2s;
-    transition:   all 1s ease;
+
 } 
 
 .dropdown-div .visible{
@@ -36,14 +41,17 @@
     border-radius: 25px 25px;
     align-items: center;
     justify-content: center;
-    transition: all 0.25s ease;
+
 }
 .dropdown-div .visible:hover{
     background:#D4f7ea;
 }
 .dropdown-div .checkbox-div{
-    display: none;
-    transition:  all 1s ease;
+    display: block;
+    overflow: hidden;
+    width: 0;
+    height: 0;
+    transition:  height 0.75s ,width 0.75s ;
 }
 .dropdown-div .arrow-div{
     width: 20px;
@@ -51,9 +59,10 @@
     margin-left:15px;
     display: flex;
     align-items: center;
+    transition: transform 0.5s;
 }
 .check-group{
-    padding: 10px 15px;
+    padding: 8px 15px;
     border-radius: 15px;
     font-weight: 400;
     display: flex;
@@ -69,6 +78,7 @@
 }
 .sort-label{
     max-width: 130px;
+    width: max-content;
     display: inline-block;
     margin: 0px 15px 0px 0;
     cursor: pointer;

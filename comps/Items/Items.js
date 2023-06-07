@@ -1,9 +1,63 @@
-import React from 'react'
-
+"use client";
+import React, { useState } from 'react'
+import './Items.css'
+import Item from './Item/Item'
 const Items = () => {
+   const [items , setItems] = useState([{
+    Id:101,
+    Count:254,
+    Name:'Haldi-Chandan Facepack',
+    Domain: 'Facecare',
+    Type: 'Facewash'
+   },
+  {
+    Id:102,
+    Count:254,
+    Name:'Haldi-Chandan Facepack',
+    Domain: 'Personal Wellness',
+    Type: 'Talcum powder'
+  },
+  {
+    Id:103,
+    Count:254,
+    Name:'Haldi-Chandan Facepack',
+    Domain: 'Personal Wellness',
+    Type: 'Talcum powder'
+  },
+  {
+    Id:104,
+    Count:254,
+    Name:'Haldi-Chandan Facepack',
+    Domain: 'Personal Wellness',
+    Type: 'Talcum powder'
+  },
+  {
+    Id:105,
+    Count:254,
+    Name:'Haldi-Chandan Facepack',
+    Domain: 'Personal Wellness',
+    Type: 'Talcum powder'
+  },
+  {
+    Id:106,
+    Count:254,
+    Name:'Haldi-Chandan Facepack',
+    Domain: 'Personal Wellness',
+    Type: 'Talcum powder'
+  },
+  {
+    Id:107,
+    Count:254,
+    Name:'Haldi-Chandan Facepack',
+    Domain: 'Personal Wellness',
+    Type: 'Talcum powder'
+  }])
   return (
-    <div>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic placeat debitis voluptas natus voluptate aliquid voluptatum porro, itaque reiciendis architecto sed non labore accusantium earum deleniti unde beatae commodi suscipit voluptates adipisci harum voluptatibus? Optio illo corrupti mollitia consequatur eum similique voluptatem? Sunt commodi alias, in sapiente corrupti nihil expedita.</p>
+    <div className='items'>
+      {items && items.map((item)=>(
+        <Item item={item}/>
+      ))}
+        
     </div>
   )
 }
